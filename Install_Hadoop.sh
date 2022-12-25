@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 # Step 1: Install java
 sudo apt-get -y install openjdk-8-jdk-headless
