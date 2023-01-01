@@ -12,8 +12,8 @@ sed -i 's+export JAVA_HOME=${JAVA_HOME}+export JAVA_HOME=/usr/lib/jvm/java-8-ope
 
 echo Enter dns of namenode: 
 read namenode_dns
-sed -i 's/<nnode>/$namenode_dns/g' core-site.xml
-mv core-site.xml ~/server/hadoop-2.7.3/etc/hadoop/
+sed -i 's/<nnode>/$namenode_dns/g' Hadoop_AWS_Cluster/core-site.xml
+mv Hadoop_AWS_Cluster/core-site.xml ~/server/hadoop-2.7.3/etc/hadoop/
 
 sudo mkdir -p /usr/local/hadoop/hdfs/data
 sudo chown -R ubuntu:ubuntu /usr/local/hadoop/hdfs/data
@@ -31,24 +31,24 @@ read dnode2
 echo Enter datanode DNS
 read dnode3
 
-sed -i 's/<nnode>/$namenode_dns/g' config.txt
-sed -i 's/<dnode1>/$dnode1/g' config.txt
-sed -i 's/<dnode2>/$dnode2/g' config.txt
-sed -i 's/<dnode3>/$dnode3/g' config.txt
+sed -i 's/<nnode>/$namenode_dns/g' Hadoop_AWS_Cluster/config.txt
+sed -i 's/<dnode1>/$dnode1/g' Hadoop_AWS_Cluster/config.txt
+sed -i 's/<dnode2>/$dnode2/g' Hadoop_AWS_Cluster/config.txt
+sed -i 's/<dnode3>/$dnode3/g' Hadoop_AWS_Cluster/config.txt
 
-cat config.txt >> ~/.ssh/config
+cat Hadoop_AWS_Cluster/config.txt >> ~/.ssh/config
 
-mv hdfs-site.xml ~/server/hadoop-2.7.3/etc/hadoop/
+mv Hadoop_AWS_Cluster/hdfs-site.xml ~/server/hadoop-2.7.3/etc/hadoop/
 
-sed -i 's/<nnode>/$namenode_dns/g' mapred-site.xml
+sed -i 's/<nnode>/$namenode_dns/g' Hadoop_AWS_Cluster/mapred-site.xml
 
-cat mapred-site.xml >> ~/server/hadoop-2.7.3/etc/hadoop/mapred-site.xml.template
+cat Hadoop_AWS_Cluster/mapred-site.xml >> ~/server/hadoop-2.7.3/etc/hadoop/mapred-site.xml.template
 mv ~/server/hadoop-2.7.3/etc/hadoop/mapred-site.xml.template ~/server/hadoop-2.7.3/etc/hadoop/mapred-site.xml
 
 
-sed -i 's/<nnode>/$namenode_dns/g' yarn-site.xml
+sed -i 's/<nnode>/$namenode_dns/g' Hadoop_AWS_Cluster/yarn-site.xml
 
-mv yarn-site.xml ~/server/hadoop-2.7.3/etc/hadoop/
+mv Hadoop_AWS_Cluster/yarn-site.xml ~/server/hadoop-2.7.3/etc/hadoop/
 
 cat $namenode_dns >> ~/server/hadoop-2.7.3/etc/hadoop/masters
 

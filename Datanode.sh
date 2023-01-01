@@ -12,8 +12,8 @@ sed -i 's+export JAVA_HOME=${JAVA_HOME}+export JAVA_HOME=/usr/lib/jvm/java-8-ope
 
 echo Enter dns of namenode: 
 read namenode_dns
-sed -i 's/<nnode>/$namenode_dns/g' core-site.xml
-mv core-site.xml ~/server/hadoop-2.7.3/etc/hadoop/
+sed -i 's/<nnode>/$namenode_dns/g' Hadoop_AWS_Cluster/core-site.xml
+mv Hadoop_AWS_Cluster/core-site.xml ~/server/hadoop-2.7.3/etc/hadoop/
 
 sudo mkdir -p /usr/local/hadoop/hdfs/data
 sudo chown -R ubuntu:ubuntu /usr/local/hadoop/hdfs/data
@@ -23,4 +23,4 @@ read key
 cat key >> /home/ubuntu/.ssh/authorized_keys
 
 
-mv hdfs-site.xml ~/server/hadoop-2.7.3/etc/hadoop/
+mv Hadoop_AWS_Cluster/hdfs-site.xml ~/server/hadoop-2.7.3/etc/hadoop/
