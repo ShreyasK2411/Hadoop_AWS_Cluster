@@ -1,0 +1,19 @@
+Host namenode
+  HostName <nnode>
+  User ubuntu
+  IdentityFile ~/.ssh/id_rsa
+
+Host datanode1
+  HostName <dnode1>
+  User ubuntu
+  IdentityFile ~/.ssh/id_rsa
+
+Host datanode2
+  HostName <dnode2>
+  User ubuntu
+  IdentityFile ~/.ssh/id_rsa
+
+Host datanode3
+  HostName <dnode3>
+  User ubuntu
+  IdentityFile ~/.ssh/id_rsa
